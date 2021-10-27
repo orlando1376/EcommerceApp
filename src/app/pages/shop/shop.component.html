@@ -1,0 +1,19 @@
+<div class="container">
+    <div class="filter">
+        <app-filter *ngIf="dictionaries$ | async as dictionaries" [dictionaries]="dictionaries"></app-filter>
+    </div>
+
+    <div class="pagination">
+        <app-paginator *ngIf="pagination$ | async as pagination" [pagination]="pagination"></app-paginator>
+    </div>
+
+    <div class="buscador">
+        <app-search></app-search>
+    </div>
+
+    <div class="productos">
+        <app-products *ngIf="pagination$ | async as pagination" [products]="pagination.data"></app-products>
+    </div>
+</div>
+
+<app-spinner *ngIf="loading$ | async"></app-spinner>

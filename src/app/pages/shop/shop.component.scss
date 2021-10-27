@@ -1,0 +1,58 @@
+.container {
+    display: grid;
+    // espaciado entre las columnas
+    grid-gap: 5px;
+    // ocupe todo el espacio posible
+    justify-content: stretch;
+    align-content: stretch;
+    grid-template-columns: 300px 1fr 1fr;
+    grid-template-rows: 60px 1fr;
+    // dos filas
+    grid-template-areas: "filter pagination buscador" "filter productos productos";
+}
+
+// todos los div dentro de container
+.container>div {
+    padding: 1em;
+}
+
+.filter {
+    grid-area: filter;
+    // background: #B6D7A8;
+}
+
+.buscador {
+    grid-area: buscador;
+    // background: #D9D2E9;
+    justify-self: end;
+}
+
+.pagination {
+    grid-area: pagination;
+    // background: #D0E0E3;
+    justify-self: start;
+}
+
+.productos {
+    grid-area: productos;
+    // background: #FFF2CC;
+}
+
+// hasta menos de 500px, para movil
+@media screen and (max-width: 500px) {
+    .container {
+        display: grid;
+        // espaciado entre las columnas
+        grid-gap: 5px;
+        // ocupe todo el espacio posible
+        justify-content: stretch;
+        align-content: stretch;
+        grid-template-columns: 1fr;
+        grid-template-rows: 60px 60px 1fr;
+        // dos filas
+        grid-template-areas: "buscador" "pagination" "productos";
+    }
+    .filter {
+        display: none;
+    }
+}

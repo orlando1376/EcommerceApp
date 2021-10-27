@@ -1,0 +1,9 @@
+.form {
+    display: flex;
+    &__textField {
+        display: inline-flex;
+    }
+    &__actions {
+        display: inline-flex;
+    }
+}

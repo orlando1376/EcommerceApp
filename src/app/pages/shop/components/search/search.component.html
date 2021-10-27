@@ -1,0 +1,11 @@
+<form [formGroup]="form" autocomplete="off" (submit)="onSubmit()" (keyup.enter)="onSubmit()">
+    <div class="form__textField">
+        <app-form-field [control]="form.controls.search" label="" [isInline]="false">
+            <app-input formControlName="search"></app-input>
+        </app-form-field>
+    </div>
+
+    <div class="form__actions">
+        <app-button type="submit">Buscar</app-button>
+    </div>
+</form>
